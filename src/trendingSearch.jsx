@@ -1,5 +1,6 @@
 import React,{useState, useEffect} from "react";
 import axios from "axios";
+import GifCard from "./GifCard";
 
 const GIPHY_API_KEY = "waCEMeSVPCLuvTwL8g1TriNMRxQBvb1h";
 //const regularSearch = `http://api.giphy.com/v1/gifs/search?q=${searchTerm}api_key=${GIPHY_API_KEY}`;
@@ -24,9 +25,7 @@ const GifList = () => {
     <ul>
         {gifs.map((gif) => {
             return(
-            <li key={gif.id}>
-                <img src={gif.images.fixed_height.url} alt={gif.title}></img>
-            </li>
+                  <GifCard key={gif.id} gif={gif} />
             );
         })}
     </ul>

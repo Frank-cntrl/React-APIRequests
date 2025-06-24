@@ -5,6 +5,7 @@ import "./style.css";
 import GifList from "./trendingSearch";
 import SearchField from "./SearchField";
 import RandomGif from "./randomSearch";
+import GifCard from "./GifCard";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <h1 className="title">Let's Make Some API Requests!</h1>
       <SearchField />
       <RandomGif />
+      <GifList />
     </div>
   );
 };
