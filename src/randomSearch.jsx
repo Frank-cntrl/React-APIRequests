@@ -1,0 +1,42 @@
+import React,{useState, useEffect} from "react";
+import axios from "axios";
+
+const GIPHY_API_KEY = "waCEMeSVPCLuvTwL8g1TriNMRxQBvb1h";
+//const regularSearch = `http://api.giphy.com/v1/gifs/search?q=${searchTerm}api_key=${GIPHY_API_KEY}`;
+//const trendingSearch = `http://api.giphy.com/v1/gifs/trending?api_key=${GIPHY_API_KEY}`;
+const randomSearch = `http://api.giphy.com/v1/gifs/random?api_key=${GIPHY_API_KEY}`;
+
+
+const RandomGif = () => {
+    const gifs = null, setGifs = useState([])
+
+    const fetchGifs = async ()=> {
+        const gifResponse = await axios.get(randomSearch);
+        const gifData = gifResponse.data;
+        setGifs(gifData.data);
+    };
+    useEffect(() => {
+        fetchGifs();
+    }, []);
+  return (
+    <div>
+    <h2>Trending Gifs</h2>
+    <ul>
+        {gifs.map((gif) => {
+            return(
+            <li key={gif.id}>
+                <img src={gif.images.fixed_height.url} alt={gif.title}></img>
+            </li>
+            );
+        })}
+    </ul>
+    </div>
+  );
+};
+
+export default RandomGif;
+
+
+//Regular Search: http://api.giphy.com/v1/gifs/search?q=SEARCH+TERM+GOES+HERE&api_key=YOUR_API_KEY
+//Trending Search: http://api.giphy.com/v1/gifs/trending?api_key=YOUR_API_KEY
+//Random Search: http://api.giphy.com/v1/gifs/random?api_key=YOUR_API_KEY
