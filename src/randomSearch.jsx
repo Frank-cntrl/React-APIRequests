@@ -18,16 +18,15 @@ const RandomGif = () => {
         fetchGif();
     }, []);
 
-if (gif){
-    return (
-        <div>
-            <h2>Random Gif</h2>
-            <div>
-                <GifCard key={gif.id} gif={gif} />
-            </div>
-        </div>
-    );
-}
+  return (
+    <div>
+      <h2>Random Gif</h2>
+      <button onClick={fetchGif}>Generate Random Gif</button>
+      <div style={{ marginTop: "20px" }}>
+        {gif ? <GifCard key={gif.id} gif={gif} /> : <p>Loading...</p>}
+      </div>
+    </div>
+  );
 };
 
 export default RandomGif;

@@ -10,7 +10,7 @@ import GifCard from "./GifCard";
 const App = () => {
   return (
     <div className="app">
-      <h1 className="title">Let's Make Some API Requests!</h1>
+      <h1 className="title">Group 4 Gif Hunt</h1>
       <SearchField />
       <RandomGif />
       <GifList />
