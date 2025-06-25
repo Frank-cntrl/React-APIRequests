@@ -4,8 +4,8 @@ import GifCard from "./GifCard";
 
 const GIPHY_API_KEY = "waCEMeSVPCLuvTwL8g1TriNMRxQBvb1h";
 //const regularSearch = `http://api.giphy.com/v1/gifs/search?q=${searchTerm}api_key=${GIPHY_API_KEY}`;
-const trendingSearch = `http://api.giphy.com/v1/gifs/trending?api_key=${GIPHY_API_KEY}`;
-const randomSearch = `http://api.giphy.com/v1/gifs/random?api_key=${GIPHY_API_KEY}`;
+const trendingSearch = `https://api.giphy.com/v1/gifs/trending?api_key=${GIPHY_API_KEY}`;
+const randomSearch = `https://api.giphy.com/v1/gifs/random?api_key=${GIPHY_API_KEY}`;
 
 
 const GifList = () => {
